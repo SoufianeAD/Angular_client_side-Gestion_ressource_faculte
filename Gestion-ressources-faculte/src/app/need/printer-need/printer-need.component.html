@@ -1,0 +1,24 @@
+<div class="container formulaire">
+  <h1>Listes des besoins d'imprimantes</h1>
+
+    <table class="table table-restricted">
+      <thead>
+      <tr>
+        <th>Marque</th> <th>Vitesse</th> <th>Résolution</th>  <th>Propriétaire</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let p of printerNeeds;">
+        <td> {{ p.brand }} </td>
+        <td> {{ p.speed }} </td>
+        <td> {{ p.resolution }} </td>
+        <td> {{ p.owner }}</td>
+        <td>
+          <span><i class="fa fa-trash-o" style="font-size: 24px;"></i></span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,72 @@
+<div class="container formulaire">
+  <h1>Nouvelle offre d'ordinateurs</h1>
+
+  <div>
+    <h3><b>Info sur la demande d'offre :</b></h3>
+    <table class="table table-striped customized-table">
+      <thead>
+      <tr>  <th>Champ</th> <th>Valeur</th>  </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Marque</td>
+        <td>Pc Dell</td>
+      </tr>
+
+      <tr>
+        <td>Processeur</td>
+        <td>Intel I7</td>
+      </tr>
+
+      <tr>
+        <td>Mémoire RAM</td>
+        <td>8GB</td>
+      </tr>
+
+      <tr>
+        <td>Technologie du disk dûr</td>
+        <td>SSD</td>
+      </tr>
+
+      <tr>
+        <td>Taille du disk dûr</td>
+        <td>512GB</td>
+      </tr>
+
+      <tr>
+        <td>Quantité</td>
+        <td>34</td>
+      </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <form>
+
+    <div class="form-group">
+      <label for="prix" class="pull-left">Prix :</label>
+      <input class="form-control"  id="prix" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="garantie" class="pull-left">Durée de garantie :</label>
+      <input class="form-control"  id="garantie" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="date" class="pull-left">Date de livraison :</label>
+      <input class="form-control"  id="date" type="date" />
+    </div>
+
+    <div class="form-group">
+      <label for="description-constat" class="pull-left">Description :</label>
+      <textarea formControlName="description" class="form-control rounded-0" id="description-constat" rows="5"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary pull-right">Valider</button>
+
+  </form>
+
+</div>

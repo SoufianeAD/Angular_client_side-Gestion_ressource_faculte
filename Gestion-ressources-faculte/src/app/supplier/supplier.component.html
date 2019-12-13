@@ -1,0 +1,25 @@
+<div class="container formulaire">
+
+  <h1>Listes des fournisseurs</h1>
+
+  <table class="table table-restricted">
+    <thead>
+    <tr>
+      <th>Nom</th> <th>Téléphone</th> <th>Mail</th> <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let s of suppliers;">
+      <td> {{ s.name }} </td>
+      <td> {{ s.phone }} </td>
+      <td> {{ s.mail }} </td>
+      <td>
+        <span><i class="fa fa-trash-o" style="font-size: 24px;"></i></span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
