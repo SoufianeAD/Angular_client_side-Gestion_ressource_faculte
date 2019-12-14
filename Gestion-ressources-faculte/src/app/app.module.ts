@@ -39,6 +39,8 @@ import { NewPrinterOfferComponent } from './printer-offer/new-printer-offer/new-
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ComputerNeedComponent } from './need/computer-need/computer-need.component';
 import { PrinterNeedComponent } from './need/printer-need/printer-need.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/typings/form-field';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,8 @@ import { PrinterNeedComponent } from './need/printer-need/printer-need.component
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
