@@ -63,8 +63,15 @@ label {
 
 .inline > button {
   position: absolute;
+  left: 500px;
+  margin: 0px 0px 5px 20px;
+}
+
+.inline > input {
+  position: absolute;
   left: 600px;
   margin: 0px 0px 5px 20px;
+  width: 350px;
 }
 
 .customized-table {
@@ -85,4 +92,11 @@ span:hover {
   color: red;
   cursor: pointer;
 }
+/******************************************************/
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle , .mat-radio-outer-circle {
+  border-color: lightgray !important;
+}
 
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+  background-color: #449D44 !important;
+}

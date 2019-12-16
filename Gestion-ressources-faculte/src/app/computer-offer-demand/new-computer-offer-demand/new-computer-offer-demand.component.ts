@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewComputerOfferDemandComponent implements OnInit {
 
+  cart = false;
+
   computers = [
     { brand: 'Lenovo', cpu: 'I7', ram: '8GB', storageTech: 'SSD', size: '256GB', quantity: 25},
     { brand: 'Lenovo', cpu: 'I7', ram: '8GB', storageTech: 'SSD', size: '256GB', quantity: 25 },
@@ -17,6 +19,10 @@ export class NewComputerOfferDemandComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onOpenCart() {
+    this.cart = true;
   }
 
 }

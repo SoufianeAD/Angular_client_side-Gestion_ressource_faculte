@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewBreakdownComponent implements OnInit {
 
-  typesPanne = [
-    {type: 'materiel'},
-    {type: 'logiciel'}
-  ];
+  breakDownType: string;
+  listBreakDownType: string[] = ['Ordinateur', 'Imprimante'];
+  frequence: string;
+  listFrequence: string[] = ['Rare', 'Fréquente', 'Permanente']
+
+  typesPanne = ['Materiel', 'Logicielle'];
 
 
 

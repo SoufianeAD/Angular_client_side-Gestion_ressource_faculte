@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatTabsModule, MatToolbarModule} from '@angular/material';
-import {MatFormFieldModule} from '@angular/material/typings/form-field';
+import {MatRadioModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -9,10 +8,12 @@ import {MatFormFieldModule} from '@angular/material/typings/form-field';
     CommonModule,
     MatToolbarModule,
     MatTabsModule,
+    MatRadioModule
   ],
   exports: [
     MatToolbarModule,
     MatTabsModule,
+    MatRadioModule
   ]
 })
 export class MaterialModule { }

@@ -12,17 +12,19 @@
 
     <div class="form-group border inline">
       <div class="form-check">
-        <input type="radio" class="form-check-input" id="i3" />
-        <label class="form-check-label m-left" for="i3">I3</label>
 
-        <input type="radio" class="form-check-input" id="i5" />
-        <label class="form-check-label m-left" for="i5">I5</label>
+        <mat-radio-group
+          class="example-radio-group"
+          [(ngModel)]="cpu" name="cpu">
+          <mat-radio-button class="example-radio-button" *ngFor="let elem of listCPU" [value]="elem">
+            {{elem}}
+          </mat-radio-button>
+        </mat-radio-group>
 
-        <input type="radio" class="form-check-input" id="i7" />
-        <label class="form-check-label m-left" for="i7">I7</label>
       </div>
 
-      <button type="button" class="btn btn-success">Autres</button>
+      <button type="button" class="btn btn-success" (click)="onOthers(0)">Autres</button>
+      <input class="form-control" *ngIf="others[0]" type="text" formControlName="others0"/>
 
     </div>
 
@@ -30,17 +32,17 @@
 
     <div class="form-group border inline">
       <div class="form-check">
-        <input type="radio" class="form-check-input" id="4gb" />
-        <label class="form-check-label m-left" for="4gb">4GB</label>
-
-        <input type="radio" class="form-check-input" id="8gb" />
-        <label class="form-check-label m-left" for="8gb">8GB</label>
-
-        <input type="radio" class="form-check-input" id="16gb" />
-        <label class="form-check-label m-left" for="16gb">16GB</label>
+        <mat-radio-group
+          class="example-radio-group"
+          [(ngModel)]="ram" name="ram">
+          <mat-radio-button class="example-radio-button" *ngFor="let elem of listRAM" [value]="elem">
+            {{elem}}
+          </mat-radio-button>
+        </mat-radio-group>
       </div>
 
-      <button type="button" class="btn btn-success">Autres</button>
+      <button type="button" class="btn btn-success" (click)="onOthers(1)">Autres</button>
+      <input class="form-control" *ngIf="others[1]" type="text" formControlName="others1"/>
 
     </div>
 
@@ -49,14 +51,19 @@
     <div class="form-group border inline">
 
       <div class="form-check">
-        <input type="radio" class="form-check-input" id="hdd" />
-        <label class="form-check-label m-left" for="hdd">HDD</label>
 
-        <input type="radio" class="form-check-input" id="ssd" />
-        <label class="form-check-label m-left" for="ssd">SSD</label>
+        <mat-radio-group
+          class="example-radio-group"
+          [(ngModel)]="hardDiskTech" name="hardDiskTech">
+          <mat-radio-button class="example-radio-button" *ngFor="let elem of listHardDiskTech" [value]="elem">
+            {{elem}}
+          </mat-radio-button>
+        </mat-radio-group>
+
       </div>
 
-      <button type="button" class="btn btn-success">Autres</button>
+      <button type="button" class="btn btn-success" (click)="onOthers(2)">Autres</button>
+      <input class="form-control" *ngIf="others[2]" type="text" formControlName="others2"/>
 
     </div>
 
@@ -65,17 +72,17 @@
     <div class="form-group border inline">
 
       <div class="form-check">
-        <input type="radio" class="form-check-input" id="256gb" />
-        <label class="form-check-label m-left" for="256gb">256GB</label>
-
-        <input type="radio" class="form-check-input" id="512gb" />
-        <label class="form-check-label m-left" for="512gb">512GB</label>
-
-        <input type="radio" class="form-check-input" id="1To" />
-        <label class="form-check-label m-left" for="1To">1To</label>
+        <mat-radio-group
+          class="example-radio-group"
+          [(ngModel)]="hardDiskSize" name="HardDiskSize">
+          <mat-radio-button class="example-radio-button" *ngFor="let elem of listHardDiskSize" [value]="elem">
+            {{elem}}
+          </mat-radio-button>
+        </mat-radio-group>
       </div>
 
-      <button type="button" class="btn btn-success">Autres</button>
+      <button type="button" class="btn btn-success" (click)="onOthers(3)">Autres</button>
+      <input class="form-control" *ngIf="others[3]" type="text" formControlName="others3"/>
 
     </div>
 

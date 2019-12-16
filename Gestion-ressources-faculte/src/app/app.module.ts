@@ -40,7 +40,6 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { ComputerNeedComponent } from './need/computer-need/computer-need.component';
 import { PrinterNeedComponent } from './need/printer-need/printer-need.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/typings/form-field';
 
 @NgModule({
   declarations: [

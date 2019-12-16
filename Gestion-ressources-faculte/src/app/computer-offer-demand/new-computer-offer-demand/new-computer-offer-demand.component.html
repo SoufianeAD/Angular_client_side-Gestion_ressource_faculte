@@ -85,12 +85,13 @@
         <input class="form-control"  id="quantity" type="number" />
       </div>
 
+      <button type="button" class="btn btn-primary pull-right" (click)="onOpenCart()" *ngIf="!cart">Voir Panier</button>
       <button type="submit" class="btn btn-success pull-right">Ajouter au Panier</button>
 
     </form>
   </div>
 
-  <div class="sub-formulaire">
+  <div class="sub-formulaire" *ngIf="cart">
     <h3>Panier</h3>
     <table class="table table-restricted">
       <thead>
@@ -117,6 +118,6 @@
 
   </div>
 
-  <button type="button" class="btn btn-primary pull-right">Valider</button>
+  <button type="button" class="btn btn-primary pull-right" *ngIf="cart">Valider</button>
 
 </div>

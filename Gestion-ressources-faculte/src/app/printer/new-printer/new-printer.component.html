@@ -12,17 +12,19 @@
 
     <div class="form-group border inline">
       <div class="form-check">
-        <input type="radio" class="form-check-input" id="1ipm" />
-        <label class="form-check-label m-left" for="1ipm">1 ipm</label>
 
-        <input type="radio" class="form-check-input" id="10ppm" />
-        <label class="form-check-label m-left" for="10ppm">10 ppm</label>
+        <mat-radio-group
+          class="example-radio-group"
+          [(ngModel)]="speed" name="speed">
+          <mat-radio-button class="example-radio-button" *ngFor="let elem of listSpeed" [value]="elem">
+            {{elem}}
+          </mat-radio-button>
+        </mat-radio-group>
 
-        <input type="radio" class="form-check-input" id="18ppm" />
-        <label class="form-check-label m-left" for="18ppm">18 ppm</label>
       </div>
 
-      <button type="button" class="btn btn-success">Autres</button>
+      <button type="button" class="btn btn-success" (click)="onOthers(0)">Autres</button>
+      <input class="form-control" *ngIf="others[0]" type="text" formControlName="others0"/>
 
     </div>
 
@@ -30,17 +32,19 @@
 
     <div class="form-group border inline">
       <div class="form-check">
-        <input type="radio" class="form-check-input" id="300dpi" />
-        <label class="form-check-label m-left" for="300dpi">300 dpi</label>
 
-        <input type="radio" class="form-check-input" id="600dpi" />
-        <label class="form-check-label m-left" for="600dpi">600 dpi</label>
+        <mat-radio-group
+          class="example-radio-group"
+          [(ngModel)]="resolution" name="resolution">
+          <mat-radio-button class="example-radio-button" *ngFor="let elem of listResolution" [value]="elem">
+            {{elem}}
+          </mat-radio-button>
+        </mat-radio-group>
 
-        <input type="radio" class="form-check-input" id="ppp" />
-        <label class="form-check-label m-left" for="ppp">ppp</label>
       </div>
 
-      <button type="button" class="btn btn-success">Autres</button>
+      <button type="button" class="btn btn-success" (click)="onOthers(1)">Autres</button>
+      <input class="form-control" *ngIf="others[1]" type="text" formControlName="others1"/>
 
     </div>
 

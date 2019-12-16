@@ -49,7 +49,7 @@ const routes: Routes = [
   { path: 'printers', component: PrinterComponent },
   { path: 'breakdowns', component: BreakdownComponent },
   { path: 'computer-needs', component: ComputerNeedComponent },
-  { path: 'printer-needs', component: PrinterNeedComponent }
+  { path: 'printer-needs', component: PrinterNeedComponent },
 ];
 
 @NgModule({
