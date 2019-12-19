@@ -1,25 +1,27 @@
-<div class="container formulaire">
-  <h1>Listes des pannes</h1>
+  <div class="container col-sm-9 col-sm-offset-2">
+  <div class="container formulaire">
+    <h1>Listes des pannes</h1>
 
-  <table class="table table-restricted">
-    <thead>
-    <tr>
-      <th>Marque</th> <th>Vitesse</th> <th>Résolution</th>  <th>Fournisseur</th> <th>Propriétaire</th>  <th></th>
-    </tr>
-    </thead>
+    <table class="table table-restricted">
+      <thead>
+      <tr>
+        <th>Marque</th> <th>Vitesse</th> <th>Résolution</th>  <th>Fournisseur</th> <th>Propriétaire</th>  <th></th>
+      </tr>
+      </thead>
 
-    <tbody>
-    <tr *ngFor="let p of printers;">
-      <td> {{ p.brand }} </td>
-      <td> {{ p.speed }} </td>
-      <td> {{ p.resolution }} </td>
-      <td> {{ p.supplier }} </td>
-      <td> {{ p.owner }} </td>
-      <td>
-        <span><i class="fa fa-trash-o" style="font-size: 24px;"></i></span>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+      <tbody>
+      <tr *ngFor="let p of printers;">
+        <td> {{ p.brand }} </td>
+        <td> {{ p.speed }} </td>
+        <td> {{ p.resolution }} </td>
+        <td> {{ p.supplier }} </td>
+        <td> {{ p.owner }} </td>
+        <td>
+          <span><i class="fa fa-trash-o" style="font-size: 24px;"></i></span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
 
-</div>
+  </div>
+  </div>

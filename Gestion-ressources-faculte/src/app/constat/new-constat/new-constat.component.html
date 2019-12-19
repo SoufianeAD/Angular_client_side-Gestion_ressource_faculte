@@ -1,56 +1,58 @@
-<div class="container formulaire">
-  <h1>Nouveau Constat</h1>
+<div class="container col-sm-9 col-sm-offset-2">
+  <div class="container formulaire">
+    <h1>Nouveau Constat</h1>
 
-  <div>
-    <h3><b>Info sur la panne :</b></h3>
-    <table class="table table-striped customized-table">
-      <thead>
-      <tr>  <th>Champ</th> <th>Valeur</th>  </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>Materiel en panne</td>
-        <td>Pc Dell</td>
-      </tr>
+    <div>
+      <h3><b>Info sur la panne :</b></h3>
+      <table class="table table-striped customized-table">
+        <thead>
+        <tr>  <th>Champ</th> <th>Valeur</th>  </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Materiel en panne</td>
+          <td>Pc Dell</td>
+        </tr>
 
-      <tr>
-        <td>Type de panne</td>
-        <td>Materiel</td>
-      </tr>
+        <tr>
+          <td>Type de panne</td>
+          <td>Materiel</td>
+        </tr>
 
-      <tr>
-        <td>Fréquence de la panne</td>
-        <td>Rare</td>
-      </tr>
+        <tr>
+          <td>Fréquence de la panne</td>
+          <td>Rare</td>
+        </tr>
 
-      <tr>
-        <td>Date de la panne</td>
-        <td>11/06/2019</td>
-      </tr>
+        <tr>
+          <td>Date de la panne</td>
+          <td>11/06/2019</td>
+        </tr>
 
-      <tr>
-        <td>Description de la panne</td>
-        <td>Problème d'alimentation éléctrique</td>
-      </tr>
+        <tr>
+          <td>Description de la panne</td>
+          <td>Problème d'alimentation éléctrique</td>
+        </tr>
 
-      </tbody>
-    </table>
+        </tbody>
+      </table>
 
+    </div>
+
+    <form>
+
+      <div class="form-group">
+        <label for="date" class="pull-left">Date de la rédaction du constat :</label>
+        <input class="form-control"  id="date" type="date" />
+      </div>
+
+      <div class="form-group">
+        <label for="description-constat" class="pull-left">Description :</label>
+        <textarea formControlName="description" class="form-control rounded-0" id="description-constat" rows="5"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary pull-right">Valider</button>
+
+    </form>
   </div>
-
-  <form>
-
-    <div class="form-group">
-      <label for="date" class="pull-left">Date de la rédaction du constat :</label>
-      <input class="form-control"  id="date" type="date" />
-    </div>
-
-    <div class="form-group">
-      <label for="description-constat" class="pull-left">Description :</label>
-      <textarea formControlName="description" class="form-control rounded-0" id="description-constat" rows="5"></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-primary pull-right">Valider</button>
-
-  </form>
 </div>

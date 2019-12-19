@@ -1,35 +1,37 @@
-<div class="container formulaire">
-  <h1>Nouveau Utilisateur</h1>
-  <form [formGroup]="newUser" (submit)="onSubmit()" data-toggle="validator">
+<div class="container col-sm-9 col-sm-offset-2">
+  <div class="container formulaire">
+    <h1>Nouveau Utilisateur</h1>
+    <form [formGroup]="newUser" (submit)="onSubmit()" data-toggle="validator">
 
-    <div class="form-group">
-      <label for="username" class="pull-left">Nom :</label>
-      <input class="form-control"  id="username" type="text" formControlName="name" />
+      <div class="form-group">
+        <label for="username" class="pull-left">Nom :</label>
+        <input class="form-control"  id="username" type="text" formControlName="name" />
+      </div>
+
+      <div class="form-group">
+        <label for="department" class="pull-left">Département :</label>
+        <select class="form-control" id="department" formControlName="department">
+          <option *ngFor="let d of departments" [value]="d.name">{{d.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="pull-left">Email :</label>
+        <input class="form-control"  id="email" type="text" formControlName="email"/>
+      </div>
+
+      <div class="form-group">
+      <label for="password" class="pull-left">Mot de passe :</label>
+      <input class="form-control"  id="password" type="password" formControlName="password"/>
     </div>
 
-    <div class="form-group">
-      <label for="department" class="pull-left">Département :</label>
-      <select class="form-control" id="department" formControlName="department">
-        <option *ngFor="let d of departments" [value]="d.name">{{d.name}}</option>
-      </select>
-    </div>
+      <div class="form-group">
+        <label for="confirm" class="pull-left">Confirmation de mot de passe :</label>
+        <input class="form-control"  id="confirm" type="password" formControlName="confirmPassword"/>
+      </div>
 
-    <div class="form-group">
-      <label for="email" class="pull-left">Email :</label>
-      <input class="form-control"  id="email" type="text" formControlName="email"/>
-    </div>
+      <button type="submit" class="btn btn-primary pull-right" [disabled]="newUser.invalid">Valider</button>
 
-    <div class="form-group">
-    <label for="password" class="pull-left">Mot de passe :</label>
-    <input class="form-control"  id="password" type="password" formControlName="password"/>
+    </form>
   </div>
-
-    <div class="form-group">
-      <label for="confirm" class="pull-left">Confirmation de mot de passe :</label>
-      <input class="form-control"  id="confirm" type="password" formControlName="confirmPassword"/>
-    </div>
-
-    <button type="submit" class="btn btn-primary pull-right" [disabled]="newUser.invalid">Valider</button>
-
-  </form>
 </div>

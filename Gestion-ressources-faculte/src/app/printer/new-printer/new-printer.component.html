@@ -1,61 +1,63 @@
-<div class="container formulaire">
-  <h1>Nouvelle Imprimante</h1>
+<div class="container col-sm-9 col-sm-offset-2">
+  <div class="container formulaire">
+    <h1>Nouvelle Imprimante</h1>
 
-  <form>
+    <form>
 
-    <div class="form-group">
-      <label for="marque" class="pull-left">Marque :</label>
-      <input class="form-control"  id="marque" type="text" />
-    </div>
+      <div class="form-group">
+        <label for="marque" class="pull-left">Marque :</label>
+        <input class="form-control"  id="marque" type="text" />
+      </div>
 
-    <label>Vitesse :</label>
+      <label>Vitesse :</label>
 
-    <div class="form-group border inline">
-      <div class="form-check">
+      <div class="form-group border inline">
+        <div class="form-check">
 
-        <mat-radio-group
-          class="example-radio-group"
-          [(ngModel)]="speed" name="speed">
-          <mat-radio-button class="example-radio-button" *ngFor="let elem of listSpeed" [value]="elem">
-            {{elem}}
-          </mat-radio-button>
-        </mat-radio-group>
+          <mat-radio-group
+            class="example-radio-group"
+            [(ngModel)]="speed" name="speed">
+            <mat-radio-button class="example-radio-button" *ngFor="let elem of listSpeed" [value]="elem">
+              {{elem}}
+            </mat-radio-button>
+          </mat-radio-group>
+
+        </div>
+
+        <button type="button" class="btn btn-success" (click)="onOthers(0)">Autres</button>
+        <input class="form-control" *ngIf="others[0]" type="text" formControlName="others0"/>
 
       </div>
 
-      <button type="button" class="btn btn-success" (click)="onOthers(0)">Autres</button>
-      <input class="form-control" *ngIf="others[0]" type="text" formControlName="others0"/>
+      <label>Résolution :</label>
 
-    </div>
+      <div class="form-group border inline">
+        <div class="form-check">
 
-    <label>Résolution :</label>
+          <mat-radio-group
+            class="example-radio-group"
+            [(ngModel)]="resolution" name="resolution">
+            <mat-radio-button class="example-radio-button" *ngFor="let elem of listResolution" [value]="elem">
+              {{elem}}
+            </mat-radio-button>
+          </mat-radio-group>
 
-    <div class="form-group border inline">
-      <div class="form-check">
+        </div>
 
-        <mat-radio-group
-          class="example-radio-group"
-          [(ngModel)]="resolution" name="resolution">
-          <mat-radio-button class="example-radio-button" *ngFor="let elem of listResolution" [value]="elem">
-            {{elem}}
-          </mat-radio-button>
-        </mat-radio-group>
+        <button type="button" class="btn btn-success" (click)="onOthers(1)">Autres</button>
+        <input class="form-control" *ngIf="others[1]" type="text" formControlName="others1"/>
 
       </div>
 
-      <button type="button" class="btn btn-success" (click)="onOthers(1)">Autres</button>
-      <input class="form-control" *ngIf="others[1]" type="text" formControlName="others1"/>
+      <div class="form-group">
+        <label for="type" class="pull-left">Fournisseur :</label>
+        <select class="form-control" id="type">
+          <option *ngFor="let f of fournisseurs" [value]="f.name">{{f.name}}</option>
+        </select>
+      </div>
 
-    </div>
+      <button type="submit" class="btn btn-primary pull-right">Valider</button>
 
-    <div class="form-group">
-      <label for="type" class="pull-left">Fournisseur :</label>
-      <select class="form-control" id="type">
-        <option *ngFor="let f of fournisseurs" [value]="f.name">{{f.name}}</option>
-      </select>
-    </div>
-
-    <button type="submit" class="btn btn-primary pull-right">Valider</button>
-
-  </form>
+    </form>
+  </div>
 </div>

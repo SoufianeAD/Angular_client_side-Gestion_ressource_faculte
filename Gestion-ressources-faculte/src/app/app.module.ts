@@ -40,6 +40,9 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { ComputerNeedComponent } from './need/computer-need/computer-need.component';
 import { PrinterNeedComponent } from './need/printer-need/printer-need.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LogInComponent } from './log-in/log-in.component';
+import { HomeComponent } from './home/home.component';
+import { HeadImgComponent } from './home/head-img/head-img.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +81,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     SideNavComponent,
     ComputerNeedComponent,
     PrinterNeedComponent,
+    LogInComponent,
+    HomeComponent,
+    HeadImgComponent,
   ],
   imports: [
     BrowserModule,

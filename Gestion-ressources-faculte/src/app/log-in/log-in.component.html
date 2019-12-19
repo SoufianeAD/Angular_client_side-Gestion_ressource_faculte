@@ -1,0 +1,38 @@
+<div class="container col-sm-9 col-sm-offset-2">
+  <div class="formulaire">
+    <div>
+      <img class="header" src="../../assets/logo-fac.png"/>
+    </div> <br/>
+
+    <form [formGroup]="login" (submit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="email" class="pull-left">Email :</label>
+        <input class="form-control"  id="email" type="text" formControlName="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="pull-left">Mot de passe :</label>
+        <input class="form-control"  id="password" type="password" formControlName="password"/>
+      </div>
+
+    </form>
+
+    <div class="form-check">
+
+      <mat-radio-group
+        class="example-radio-group"
+        [(ngModel)]="role" name="role">
+        <mat-radio-button class="example-radio-button" *ngFor="let elem of listRole" [value]="elem">
+          {{elem}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary pull-right" [disabled]="login.invalid || role == undefined">Se connecter</button>
+    <button type="button" class="btn btn-success pull-right" (click)="onSignup()" [disabled]="role == undefined">S'inscrire</button>
+
+  </div>
+
+</div>

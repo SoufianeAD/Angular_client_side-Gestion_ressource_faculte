@@ -24,6 +24,8 @@ import {PrinterComponent} from './printer/printer.component';
 import {BreakdownComponent} from './breakdown/breakdown.component';
 import {ComputerNeedComponent} from './need/computer-need/computer-need.component';
 import {PrinterNeedComponent} from './need/printer-need/printer-need.component';
+import {LogInComponent} from './log-in/log-in.component';
+import {HomeComponent} from './home/home.component';
 
 const routes: Routes = [
   { path: 'new-command', component: NewCommandComponent},
@@ -50,6 +52,8 @@ const routes: Routes = [
   { path: 'breakdowns', component: BreakdownComponent },
   { path: 'computer-needs', component: ComputerNeedComponent },
   { path: 'printer-needs', component: PrinterNeedComponent },
+  { path: 'login', component: LogInComponent },
+  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({

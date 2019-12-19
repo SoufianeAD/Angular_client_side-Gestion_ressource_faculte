@@ -1,25 +1,27 @@
-<div class="container formulaire">
-  <h1>Nouvelle affectation d'imprimante</h1>
+<div class="container col-sm-9 col-sm-offset-2">
+  <div class="container formulaire">
+    <h1>Nouvelle affectation d'imprimante</h1>
 
-  <table class="table table-restricted">
-    <thead>
-    <tr>
-      <th></th> <th>Marque</th> <th>Vitesse</th> <th>Résolution</th>  <th>Fournisseur</th>
-    </tr>
-    </thead>
+    <table class="table table-restricted">
+      <thead>
+      <tr>
+        <th></th> <th>Marque</th> <th>Vitesse</th> <th>Résolution</th>  <th>Fournisseur</th>
+      </tr>
+      </thead>
 
-    <tbody>
-    <tr *ngFor="let p of printers;">
-      <td> <input class="form-check-input" type="checkbox" /> </td>
-      <td> {{ p.brand }} </td>
-      <td> {{ p.speed }} </td>
-      <td> {{ p.resolution }} </td>
-      <td> {{ p.supplier }} </td>
-    </tr>
-    </tbody>
-  </table>
+      <tbody>
+      <tr *ngFor="let p of printers;">
+        <td> <input class="form-check-input" type="checkbox" /> </td>
+        <td> {{ p.brand }} </td>
+        <td> {{ p.speed }} </td>
+        <td> {{ p.resolution }} </td>
+        <td> {{ p.supplier }} </td>
+      </tr>
+      </tbody>
+    </table>
 
-  <button type="button" class="btn btn-primary pull-right">Département</button>
-  <button type="button" class="btn btn-primary pull-right">Personnel</button>
+    <button type="button" class="btn btn-primary pull-right">Département</button>
+    <button type="button" class="btn btn-primary pull-right">Personnel</button>
 
+  </div>
 </div>

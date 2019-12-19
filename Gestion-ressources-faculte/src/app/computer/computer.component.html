@@ -1,29 +1,31 @@
-<div class="container formulaire">
+<div class="container col-sm-9 col-sm-offset-2">
+    <div class="container formulaire">
 
-  <h1>Listes des ordinateurs</h1>
+    <h1>Listes des ordinateurs</h1>
 
-  <table class="table table-restricted">
-    <thead>
-    <tr>
-      <th>Marque</th> <th>Processeur</th> <th>RAM</th>  <th>Technologie</th>
-      <th>Taille</th> <th>Fournisseur</th>  <th>Propriétaire</th>
-    </tr>
-    </thead>
+    <table class="table table-restricted">
+      <thead>
+      <tr>
+        <th>Marque</th> <th>Processeur</th> <th>RAM</th>  <th>Technologie</th>
+        <th>Taille</th> <th>Fournisseur</th>  <th>Propriétaire</th>
+      </tr>
+      </thead>
 
-    <tbody>
-    <tr *ngFor="let c of computers;">
-      <td> {{ c.brand }} </td>
-      <td> {{ c.cpu }} </td>
-      <td> {{ c.ram }} </td>
-      <td> {{ c.storageTech }} </td>
-      <td> {{ c.size }} </td>
-      <td> {{ c.supplier }}</td>
-      <td> {{ c.owner }} </td>
-      <td>
-        <span><i class="fa fa-trash-o" style="font-size: 24px;"></i></span>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+      <tbody>
+      <tr *ngFor="let c of computers;">
+        <td> {{ c.brand }} </td>
+        <td> {{ c.cpu }} </td>
+        <td> {{ c.ram }} </td>
+        <td> {{ c.storageTech }} </td>
+        <td> {{ c.size }} </td>
+        <td> {{ c.supplier }}</td>
+        <td> {{ c.owner }} </td>
+        <td>
+          <span><i class="fa fa-trash-o" style="font-size: 24px;"></i></span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
 
- </div>
+  </div>
+</div>
