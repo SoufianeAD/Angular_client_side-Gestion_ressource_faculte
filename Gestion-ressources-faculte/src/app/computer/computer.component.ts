@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Subscription} from 'rxjs';
+import {Pc} from '../models/pc.model';
+import {RessourceService} from '../services/RessourceService';
 
 @Component({
   selector: 'app-computer',
@@ -7,18 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComputerComponent implements OnInit {
 
-  computers = [
-    { brand: 'Lenovo', cpu: 'I7', ram: '8GB', storageTech: 'SSD', size: '256GB', supplier: 'Lenovo', owner: 'Oussama SIDGUI'},
-    { brand: 'Lenovo', cpu: 'I7', ram: '8GB', storageTech: 'SSD', size: '256GB', supplier: 'Lenovo', owner: 'Oussama SIDGUI' },
-    { brand: 'Lenovo', cpu: 'I7', ram: '8GB', storageTech: 'SSD', size: '256GB', supplier: 'Lenovo', owner: 'Oussama SIDGUI' },
-    { brand: 'Lenovo', cpu: 'I7', ram: '8GB', storageTech: 'SSD', size: '256GB', supplier: 'Lenovo', owner: 'Oussama SIDGUI' },
-    { brand: 'Lenovo', cpu: 'I7', ram: '8GB', storageTech: 'SSD', size: '256GB', supplier: 'Lenovo', owner: 'Oussama SIDGUI' }
-  ];
+  computers: Pc[] = [];
+  computersSubscription: Subscription;
 
 
-  constructor() { }
+  constructor(private resourcesService: RessourceService) { }
 
   ngOnInit() {
+    this.init();
+  }
+
+  init() {
+    this.computersSubscription = this.resourcesService.pcSubject.subscribe(
+      (computers: Pc[]) => {
+        this.computers = computers;
+      }
+    );
+    this.resourcesService.getAllComputers();
+    this.resourcesService.emitPcSubject();
   }
 
 }

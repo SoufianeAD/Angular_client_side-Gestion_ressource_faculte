@@ -1,0 +1,21 @@
+  <div class="">
+
+    <h1>Listes des utilisateurs</h1>
+
+    <table class="table table-restricted">
+      <thead>
+      <tr>
+        <th>Nom</th> <th>Département</th> <th>Mail</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let u of users;">
+        <td> {{ u.name }} </td>
+        <td> {{ u.department }} </td>
+        <td> {{ u.mail }} </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>

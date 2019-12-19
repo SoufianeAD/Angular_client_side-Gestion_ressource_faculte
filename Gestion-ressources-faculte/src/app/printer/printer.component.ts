@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Printer} from '../models/printer.model';
+import {Subscription} from 'rxjs';
+import {RessourceService} from '../services/RessourceService';
 
 @Component({
   selector: 'app-printer',
@@ -7,19 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrinterComponent implements OnInit {
 
-  printers = [
-    { brand: 'Canon', speed: '10 ppm', resolution: '600dpi', supplier: 'Canon', owner: 'Oussama SIDGUI'},
-    { brand: 'Canon', speed: '10 ppm', resolution: '600dpi', supplier: 'Canon', owner: 'Oussama SIDGUI'},
-    { brand: 'Canon', speed: '10 ppm', resolution: '600dpi', supplier: 'Canon', owner: 'Oussama SIDGUI'},
-    { brand: 'Canon', speed: '10 ppm', resolution: '600dpi', supplier: 'Canon', owner: 'Oussama SIDGUI'},
-    { brand: 'Canon', speed: '10 ppm', resolution: '600dpi', supplier: 'Canon', owner: 'Oussama SIDGUI'},
-    { brand: 'Canon', speed: '10 ppm', resolution: '600dpi', supplier: 'Canon', owner: 'Oussama SIDGUI'},
-  ];
+  printers: Printer[] = [];
+  printersSubscription: Subscription;
 
 
-  constructor() { }
+  constructor(private resourcesService: RessourceService) { }
 
   ngOnInit() {
+    this.init();
+  }
+
+  init() {
+    this.printersSubscription = this.resourcesService.printerSubject.subscribe(
+      (printers: Printer[]) => {
+        this.printers = printers;
+      }
+    );
+    this.resourcesService.getAllPrinter();
   }
 
 }

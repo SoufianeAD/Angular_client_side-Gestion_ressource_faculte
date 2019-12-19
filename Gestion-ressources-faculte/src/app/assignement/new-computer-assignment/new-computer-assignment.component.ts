@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogConfig} from '@angular/material';
+import {DepartmentAssignComponent} from '../department-assign/department-assign.component';
+import {StaffAssignComponent} from '../staff-assign/staff-assign.component';
 
 @Component({
   selector: 'app-new-computer-assignment',
@@ -14,9 +17,37 @@ export class NewComputerAssignmentComponent implements OnInit {
     { brand: 'Lenovo', cpu: 'I7', ram: '8GB', storageTech: 'SSD', size: '256GB', supplier: 'Lenovo'}
   ];
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  onAssignToDepartment() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '60%';
+    dialogConfig.disableClose = false;
+
+    const dialogRef = this.dialog.open(DepartmentAssignComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+      () => {
+       // this.refresh();
+      }
+    );
+  }
+
+  onAssignToStaff() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '60%';
+    dialogConfig.disableClose = false;
+
+    const dialogRef = this.dialog.open(StaffAssignComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+      () => {
+        // this.refresh();
+      }
+    );
   }
 
 }

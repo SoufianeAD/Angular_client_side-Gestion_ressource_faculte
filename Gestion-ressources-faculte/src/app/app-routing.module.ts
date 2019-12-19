@@ -53,7 +53,7 @@ const routes: Routes = [
   { path: 'computer-needs', component: ComputerNeedComponent },
   { path: 'printer-needs', component: PrinterNeedComponent },
   { path: 'login', component: LogInComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
 ];
 
 @NgModule({

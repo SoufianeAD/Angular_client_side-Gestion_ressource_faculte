@@ -43,6 +43,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LogInComponent } from './log-in/log-in.component';
 import { HomeComponent } from './home/home.component';
 import { HeadImgComponent } from './home/head-img/head-img.component';
+import { DepartmentAssignComponent } from './assignement/department-assign/department-assign.component';
+import { StaffAssignComponent } from './assignement/staff-assign/staff-assign.component';
+import {RessourceService} from './services/RessourceService';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -84,6 +88,8 @@ import { HeadImgComponent } from './home/head-img/head-img.component';
     LogInComponent,
     HomeComponent,
     HeadImgComponent,
+    DepartmentAssignComponent,
+    StaffAssignComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,8 +98,15 @@ import { HeadImgComponent } from './home/head-img/head-img.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    RessourceService
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DepartmentAssignComponent,
+    StaffAssignComponent
+  ]
 })
 export class AppModule { }

@@ -2,11 +2,11 @@
   <div class="container formulaire">
     <h1>Nouveau Ordinateur</h1>
 
-    <form>
+    <form [formGroup]="newComputer" (submit)="onSubmit()">
 
       <div class="form-group">
         <label for="marque" class="pull-left">Marque :</label>
-        <input class="form-control"  id="marque" type="text" />
+        <input class="form-control"  id="marque" type="text" formControlName="brand"/>
       </div>
 
       <label>Processeur :</label>
@@ -16,7 +16,7 @@
 
           <mat-radio-group
             class="example-radio-group"
-            [(ngModel)]="cpu" name="cpu">
+            [(ngModel)]="cpu" name="cpu" formControlName="processeur">
             <mat-radio-button class="example-radio-button" *ngFor="let elem of listCPU" [value]="elem">
               {{elem}}
             </mat-radio-button>
@@ -36,7 +36,7 @@
 
           <mat-radio-group
             class="example-radio-group"
-            [(ngModel)]="ram" name="ram">
+            [(ngModel)]="ram" name="ram" formControlName="memoireRAM">
             <mat-radio-button class="example-radio-button" *ngFor="let elem of listRAM" [value]="elem">
               {{elem}}
             </mat-radio-button>
@@ -57,7 +57,7 @@
 
           <mat-radio-group
             class="example-radio-group"
-            [(ngModel)]="hardDiskTech" name="hardDiskTech">
+            [(ngModel)]="hardDiskTech" name="hardDiskTech" formControlName="diskDurTech">
             <mat-radio-button class="example-radio-button" *ngFor="let elem of listHardDiskTech" [value]="elem">
               {{elem}}
             </mat-radio-button>
@@ -78,7 +78,7 @@
 
           <mat-radio-group
             class="example-radio-group"
-            [(ngModel)]="hardDiskSize" name="HardDiskSize">
+            [(ngModel)]="hardDiskSize" name="HardDiskSize" formControlName="diskDurTaille">
             <mat-radio-button class="example-radio-button" *ngFor="let elem of listHardDiskSize" [value]="elem">
               {{elem}}
             </mat-radio-button>
@@ -92,7 +92,7 @@
 
       <div class="form-group">
         <label for="type" class="pull-left">Fournisseur :</label>
-        <select class="form-control" id="type">
+        <select class="form-control" id="type" formControlName="supplier">
           <option *ngFor="let f of fournisseurs" [value]="f.name">{{f.name}}</option>
         </select>
       </div>
