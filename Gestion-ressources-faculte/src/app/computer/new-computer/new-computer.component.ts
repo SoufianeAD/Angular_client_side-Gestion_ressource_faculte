@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Pc} from '../../models/pc.model';
 import {RessourceService} from '../../services/RessourceService';
+import {Fournisseur} from '../../models/fournisseur.model';
 
 @Component({
   selector: 'app-new-computer',
@@ -57,7 +58,10 @@ export class NewComputerComponent implements OnInit {
   onSubmit() {
     this.computer = new Pc();
     this.computer.marque = this.newComputer.get('brand').value;
-    this.computer.fournisseur = this.newComputer.get('supplier').value;
+    //this.computer.fournisseur = this.newComputer.get('supplier').value;
+  /*  let fournisseur = new Fournisseur();
+    fournisseur.nom = this.newComputer.get('supplier').value;
+    this.computer.fournisseur = fournisseur;*/
     if ( this.others[0] === true) {
       this.computer.cpu = this.newComputer.get('others0').value;
     } else {

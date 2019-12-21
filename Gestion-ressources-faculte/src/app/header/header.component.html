@@ -5,11 +5,11 @@
       <img class="navbar-brand" src="../../assets/logo-fac.png" />
     </a>
     <ul class="nav navbar-nav pull-right">
-      <a routerLink="login" class="btn btn-toolbar" *ngIf="!isAuth">
+      <a routerLink="login" class="btn btn-toolbar" *ngIf="isAuth">
         <i class="fa fa-user"></i> Connexion
       </a>
 
-      <a class="btn btn-toolbar" *ngIf="isAuth">
+      <a class="btn btn-toolbar" *ngIf="!isAuth">
         <i class="fa fa-sign-out"></i> Déconnexion
       </a>
     </ul>

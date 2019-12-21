@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UserService} from '../../services/UserService';
+import {User} from '../../models/user.model';
 
 @Component({
   selector: 'app-new-user',
@@ -15,7 +17,9 @@ export class NewUserComponent implements OnInit {
     { name: 'Ressources Humaines'}
   ];
 
-  constructor() { }
+  user: User;
+
+  constructor(private usersService: UserService) { }
 
   ngOnInit() {
     this.init();
@@ -52,6 +56,21 @@ export class NewUserComponent implements OnInit {
       console.log('ERROR : password mismatch');
     } else {
       console.log(name + ' ' + department + ' ' + email + ' ' + password + ' ' + confirmPassword);
+
+      this.user = new User();
+      this.user.email = email;
+      this.user.nom = name;
+      this.user.departement = department;
+      this.user.pasword = password;
+
+      this.usersService.addUser(this.user).subscribe(
+        (response) => {
+          console.log('User created!');
+        },
+        (error) => {
+          console.log('Error ! : ' + error);
+        }
+      );
       this.clear();
     }
   }

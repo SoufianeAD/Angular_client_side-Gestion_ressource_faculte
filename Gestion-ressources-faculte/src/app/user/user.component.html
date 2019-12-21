@@ -6,17 +6,18 @@
       <table class="table table-restricted">
         <thead>
         <tr>
-          <th>Nom</th> <th>Département</th> <th>Mail</th> <th></th>
+          <th>Nom</th> <th>Prénom</th> <th>Département</th> <th>Email</th> <th></th>
         </tr>
         </thead>
 
         <tbody>
         <tr *ngFor="let u of users;">
-          <td> {{ u.name }} </td>
-          <td> {{ u.department }} </td>
-          <td> {{ u.mail }} </td>
+          <td> {{ u.nom }} </td>
+          <td> {{ u.prenom }} </td>
+          <td> {{ u.departement }} </td>
+          <td> {{ u.email }} </td>
           <td>
-            <span><i class="fa fa-trash-o" style="font-size: 24px;"></i></span>
+            <span (click)="onDelete(u.id)"><i class="fa fa-trash-o" style="font-size: 24px;"></i></span>
           </td>
         </tr>
         </tbody>

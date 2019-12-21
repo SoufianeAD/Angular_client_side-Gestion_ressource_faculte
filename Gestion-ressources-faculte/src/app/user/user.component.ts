@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../models/user.model';
+import {Subscription} from 'rxjs';
+import {UserService} from '../services/UserService';
 
 @Component({
   selector: 'app-user',
@@ -7,17 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  users = [
-    { name: 'Oussama SIDGUI', department: 'Informatique', mail: 'SIDGUI@GMAIL.COM'},
-    { name: 'Oussama SIDGUI', department: 'Informatique', mail: 'SIDGUI@GMAIL.COM'},
-    { name: 'Oussama SIDGUI', department: 'Informatique', mail: 'SIDGUI@GMAIL.COM'},
-    { name: 'Oussama SIDGUI', department: 'Informatique', mail: 'SIDGUI@GMAIL.COM'},
-    { name: 'Oussama SIDGUI', department: 'Informatique', mail: 'SIDGUI@GMAIL.COM'}
-  ];
+  users: User[] = [];
+  usersSubscription: Subscription;
 
-  constructor() { }
+  constructor(private usersService: UserService) { }
 
   ngOnInit() {
+    this.init();
+  }
+
+  init() {
+    this.usersSubscription = this.usersService.usersSubject.subscribe(
+      (users: User[]) => {
+        this.users = users;
+      }
+    );
+    this.usersService.getUsers();
+  }
+
+  onDelete(id: number) {
+    console.log('user with id : ' + id + ' removed');
   }
 
 }

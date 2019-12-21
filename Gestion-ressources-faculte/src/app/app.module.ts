@@ -47,6 +47,10 @@ import { DepartmentAssignComponent } from './assignement/department-assign/depar
 import { StaffAssignComponent } from './assignement/staff-assign/staff-assign.component';
 import {RessourceService} from './services/RessourceService';
 import {HttpClientModule} from '@angular/common/http';
+import {UserService} from './services/UserService';
+import { ComputerBreakdownComponent } from './breakdown/computer-breakdown/computer-breakdown.component';
+import { PrinterBreakdownComponent } from './breakdown/printer-breakdown/printer-breakdown.component';
+import {DepartementService} from './services/DepartementService';
 
 @NgModule({
   declarations: [
@@ -90,6 +94,8 @@ import {HttpClientModule} from '@angular/common/http';
     HeadImgComponent,
     DepartmentAssignComponent,
     StaffAssignComponent,
+    ComputerBreakdownComponent,
+    PrinterBreakdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,12 +107,16 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    RessourceService
+    RessourceService,
+    UserService,
+    DepartementService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
     DepartmentAssignComponent,
-    StaffAssignComponent
+    StaffAssignComponent,
+    ComputerBreakdownComponent,
+    PrinterBreakdownComponent
   ]
 })
 export class AppModule { }

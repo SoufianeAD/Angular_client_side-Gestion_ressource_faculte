@@ -49,7 +49,7 @@ export class NewPrinterComponent implements OnInit {
   onSubmit() {
     this.printer = new Printer();
     this.printer.marque = this.newPrinterForm.get('brand').value;
-    this.printer.fournisseur = this.newPrinterForm.get('supplier').value;
+   // this.printer.fournisseur = this.newPrinterForm.get('supplier').value;
 
     if ( this.others[0] === true) {
       this.printer.vitesse = this.newPrinterForm.get('others0').value;
@@ -63,7 +63,7 @@ export class NewPrinterComponent implements OnInit {
       this.printer.resolution = this.resolution;
     }
 
-    // this.resourcesService.createNewPrinter(this.printer);
+    this.resourcesService.createNewPrinter(this.printer);
     console.log(this.printer);
 
   }
